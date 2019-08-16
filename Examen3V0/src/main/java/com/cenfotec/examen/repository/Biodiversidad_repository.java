@@ -12,4 +12,7 @@ public interface Biodiversidad_repository extends JpaRepository<Biodiversidad, I
 	
 	@Query("SELECT b FROM Biodiversidad b WHERE b.idpais = ?1 and b.tipo = ?2")
 	List<Biodiversidad> findBiodiversidadByidpaisAndtipo(Integer idpais, String tipo);
+	
+	@Query("SELECT b FROM Biodiversidad b WHERE b.nombrecient LIKE ?1%")
+	List<Biodiversidad> findByNombrecientStartsWith(String nombrecient);
 }

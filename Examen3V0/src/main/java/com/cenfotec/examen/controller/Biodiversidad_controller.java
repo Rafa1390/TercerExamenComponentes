@@ -29,6 +29,12 @@ public class Biodiversidad_controller {
 		return listaBio;
 	}
 	
+	@GetMapping(path = {"/buscar_bio_por_nombre/{nombrecient}"})
+	public List<Biodiversidad> findByNombreCient(@PathVariable String nombrecient){
+		List<Biodiversidad> listaBio = bioRepo.findByNombrecientStartsWith(nombrecient);
+		return listaBio;
+	}
+	
 	@PostMapping("/registro_biodiversidad")
 	public String postBiodiversidad(@RequestBody Biodiversidad bio) {
 		try {
