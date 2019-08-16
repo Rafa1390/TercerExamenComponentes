@@ -8,22 +8,22 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="nombres_animales")
-public class Nombre_animal {
+@Table(name="nombres_comunes")
+public class Nombre_comun {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	@Column
-	private int id_animal;
+	private int idbio;
 	@Column
 	private String nombre;
 	
-	public Nombre_animal() {
+	public Nombre_comun() {
 	}
 
-	public Nombre_animal(int id, int id_animal, String nombre) {
+	public Nombre_comun(int id, int idbio, String nombre) {
 		this.id = id;
-		this.id_animal = id_animal;
+		this.idbio = idbio;
 		this.nombre = nombre;
 	}
 
@@ -35,12 +35,12 @@ public class Nombre_animal {
 		this.id = id;
 	}
 
-	public int getId_animal() {
-		return id_animal;
+	public int getIdbio() {
+		return idbio;
 	}
 
-	public void setId_animal(int id_animal) {
-		this.id_animal = id_animal;
+	public void setIdbio(int idbio) {
+		this.idbio = idbio;
 	}
 
 	public String getNombre() {

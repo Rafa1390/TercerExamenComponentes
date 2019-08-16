@@ -8,26 +8,32 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="animales")
-public class Animal {
+@Table(name="biodiversidad")
+public class Biodiversidad {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	@Column
-	private String nombre_cientifico;
+	private String tipo;
+	@Column
+	private String nombrecient;
 	@Column
 	private String peligro;
 	@Column
 	private int poblacion;
+	@Column
+	private int idpais;
 	
-	public Animal() {
+	public Biodiversidad() {
 	}
 
-	public Animal(int id, String nombre_cientifico, String peligro, int poblacion) {
+	public Biodiversidad(int id, String tipo, String nombrecient, String peligro, int poblacion, int idpais) {
 		this.id = id;
-		this.nombre_cientifico = nombre_cientifico;
+		this.tipo = tipo;
+		this.nombrecient = nombrecient;
 		this.peligro = peligro;
 		this.poblacion = poblacion;
+		this.idpais = idpais;
 	}
 
 	public int getId() {
@@ -38,12 +44,20 @@ public class Animal {
 		this.id = id;
 	}
 
-	public String getNombre_cientifico() {
-		return nombre_cientifico;
+	public String getTipo() {
+		return tipo;
 	}
 
-	public void setNombre_cientifico(String nombre_cientifico) {
-		this.nombre_cientifico = nombre_cientifico;
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+
+	public String getNombrecient() {
+		return nombrecient;
+	}
+
+	public void setNombrecient(String nombrecient) {
+		this.nombrecient = nombrecient;
 	}
 
 	public String getPeligro() {
@@ -60,5 +74,13 @@ public class Animal {
 
 	public void setPoblacion(int poblacion) {
 		this.poblacion = poblacion;
+	}
+
+	public int getIdpais() {
+		return idpais;
+	}
+
+	public void setIdpais(int idpais) {
+		this.idpais = idpais;
 	}
 }
