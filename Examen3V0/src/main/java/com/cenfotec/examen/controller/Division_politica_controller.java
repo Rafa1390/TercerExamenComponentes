@@ -29,6 +29,12 @@ public class Division_politica_controller {
 		return listaDivPol;
 	}
 	
+	@GetMapping(path = {"/div_politica_por_region/{idreg}"})
+	public List<Division_politica> findByIdRegion(@PathVariable int idreg){
+		List<Division_politica> listaDivPol = divPolRepo.findByidreg(idreg);
+		return listaDivPol;
+	}
+	
 	@PostMapping("/registro_div_politica")
 	public String postDivPolitica(@RequestBody Division_politica divPol) {
 		try {

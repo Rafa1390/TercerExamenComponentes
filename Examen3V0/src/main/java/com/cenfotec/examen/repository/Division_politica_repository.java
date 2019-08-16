@@ -10,6 +10,8 @@ import com.cenfotec.examen.model.Division_politica;
 public interface Division_politica_repository extends JpaRepository<Division_politica, Integer>{
 	List<Division_politica> findByidpais(int idpais);
 	
+	List<Division_politica> findByidreg(int idreg);
+	
 	@Query("SELECT dp FROM Division_politica dp WHERE dp.nombre LIKE ?1%")
 	List<Division_politica> findByNombreStartsWith(String nombre);
 }

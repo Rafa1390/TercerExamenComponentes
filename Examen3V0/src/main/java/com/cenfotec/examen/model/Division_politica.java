@@ -17,14 +17,25 @@ public class Division_politica {
 	private int idpais;
 	@Column
 	private String nombre;
+	@Column
+	private int idreg;
 	
 	public Division_politica() {
 	}
 
-	public Division_politica(int id, int idpais, String nombre) {
+	public Division_politica(int id, int idpais, String nombre, int idreg) {
 		this.id = id;
 		this.idpais = idpais;
 		this.nombre = nombre;
+		this.idreg = idreg;
+	}
+
+	public int getIdreg() {
+		return idreg;
+	}
+
+	public void setIdreg(int idreg) {
+		this.idreg = idreg;
 	}
 
 	public int getId() {
@@ -35,11 +46,11 @@ public class Division_politica {
 		this.id = id;
 	}
 
-	public int getId_pais() {
+	public int getIdpais() {
 		return idpais;
 	}
 
-	public void setId_pais(int idpais) {
+	public void setIdpais(int idpais) {
 		this.idpais = idpais;
 	}
 
