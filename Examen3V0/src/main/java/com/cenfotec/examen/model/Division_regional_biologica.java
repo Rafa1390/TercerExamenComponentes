@@ -14,16 +14,16 @@ public class Division_regional_biologica {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	@Column
-	private int id_pais;
+	private int idpais;
 	@Column
 	private String region;
 	
 	public Division_regional_biologica() {
 	}
 
-	public Division_regional_biologica(int id, int id_pais, String region) {
+	public Division_regional_biologica(int id, int idpais, String region) {
 		this.id = id;
-		this.id_pais = id_pais;
+		this.idpais = idpais;
 		this.region = region;
 	}
 
@@ -35,12 +35,12 @@ public class Division_regional_biologica {
 		this.id = id;
 	}
 
-	public int getId_pais() {
-		return id_pais;
+	public int getIdpais() {
+		return idpais;
 	}
 
-	public void setId_pais(int id_pais) {
-		this.id_pais = id_pais;
+	public void setIdpais(int idpais) {
+		this.idpais = idpais;
 	}
 
 	public String getRegion() {
