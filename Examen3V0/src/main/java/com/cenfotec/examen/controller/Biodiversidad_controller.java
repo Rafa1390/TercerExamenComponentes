@@ -23,6 +23,12 @@ public class Biodiversidad_controller {
 		return listaBio;
 	}
 	
+	@GetMapping(path = {"/biodiversidad_por_pais_por_tipo/{idpais}/{tipo}"})
+	public List<Biodiversidad> findByPaisAndTipo(@PathVariable Integer idpais, @PathVariable String tipo){
+		List<Biodiversidad> listaBio = bioRepo.findBiodiversidadByidpaisAndtipo(idpais, tipo);
+		return listaBio;
+	}
+	
 	@PostMapping("/registro_biodiversidad")
 	public String postBiodiversidad(@RequestBody Biodiversidad bio) {
 		try {
