@@ -14,17 +14,17 @@ public class Politica_x_biologica {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	@Column
-	private int id_div_reg;
+	private int iddivreg;
 	@Column
-	private int id_div_pol;
+	private int iddivpol;
 	
 	public Politica_x_biologica() {
 	}
 
-	public Politica_x_biologica(int id, int id_div_reg, int id_div_pol) {
+	public Politica_x_biologica(int id, int iddivreg, int iddivpol) {
 		this.id = id;
-		this.id_div_reg = id_div_reg;
-		this.id_div_pol = id_div_pol;
+		this.iddivreg = iddivreg;
+		this.iddivpol = iddivpol;
 	}
 
 	public int getId() {
@@ -35,19 +35,19 @@ public class Politica_x_biologica {
 		this.id = id;
 	}
 
-	public int getId_div_reg() {
-		return id_div_reg;
+	public int getIddivreg() {
+		return iddivreg;
 	}
 
-	public void setId_div_reg(int id_div_reg) {
-		this.id_div_reg = id_div_reg;
+	public void setIddivreg(int iddivreg) {
+		this.iddivreg = iddivreg;
 	}
 
-	public int getId_div_pol() {
-		return id_div_pol;
+	public int getIddivpol() {
+		return iddivpol;
 	}
 
-	public void setId_div_pol(int id_div_pol) {
-		this.id_div_pol = id_div_pol;
+	public void setIddivpol(int iddivpol) {
+		this.iddivpol = iddivpol;
 	}
 }

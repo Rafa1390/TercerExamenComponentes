@@ -23,6 +23,12 @@ public class Division_politica_controller {
 		return listaDivPol;
 	}
 	
+	@GetMapping(path = {"/buscar_por_nombre/{nombre}"})
+	public List<Division_politica> findByNombre(@PathVariable String nombre){
+		List<Division_politica> listaDivPol = divPolRepo.findByNombreStartsWith(nombre);
+		return listaDivPol;
+	}
+	
 	@PostMapping("/registro_div_politica")
 	public String postDivPolitica(@RequestBody Division_politica divPol) {
 		try {

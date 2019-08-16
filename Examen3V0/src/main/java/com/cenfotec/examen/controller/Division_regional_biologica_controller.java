@@ -16,12 +16,37 @@ import com.cenfotec.examen.repository.Division_regional_biologica_repository;
 public class Division_regional_biologica_controller {
 	@Autowired
 	Division_regional_biologica_repository divBioRepo;
+//	@Autowired
+//	Politica_x_biologica_repository pXbRepo;
+//	@Autowired
+//	Division_politica_repository polRepo;
 	
 	@GetMapping(path = {"/div_biologica/{idpais}"})
 	public List<Division_regional_biologica> findByIdPais(@PathVariable int idpais){
 		List<Division_regional_biologica> listaDivBio = divBioRepo.findByidpais(idpais);
 		return listaDivBio;
 	}
+	
+	@GetMapping(path = {"/buscar_por_region/{region}"})
+	public List<Division_regional_biologica> findByRegion(@PathVariable String region){
+		List<Division_regional_biologica> listaDivBio = divBioRepo.findByRegionStartsWith(region);
+		return listaDivBio;
+	}
+	
+//	@SuppressWarnings("null")
+//	@GetMapping(path = {"/div_pol_x_bio/{iddivreg}"})
+//	public List<Division_politica> findByPolXBio(@PathVariable int iddivreg){
+//		List<Politica_x_biologica> listaId = pXbRepo.findByiddivreg(iddivreg);
+//		List<Division_politica> listaPolitica = null;
+//		Division_politica pol;
+//		int idPol;
+//		for(Politica_x_biologica lista : listaId) {
+//			idPol = lista.getIddivpol();
+//			pol = polRepo.getOne(idPol);
+//			listaPolitica.add(pol);
+//		}
+//		return listaPolitica;
+//	}
 	
 	@PostMapping("/registro_div_biologica")
 	public String postDivBiologica(@RequestBody Division_regional_biologica divBio) {
